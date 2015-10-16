@@ -395,6 +395,8 @@ function! AutoPairsReturn()
     " coffeescript forbid indent new line
     if &filetype == 'coffeescript' || &filetype == 'coffee'
       return "\<ESC>".cmd."k==o"
+    elseif &filetype == 'cs'
+      return "\<ESC>k$i\<ENTER>\<ESC>==o".cmd
     else
       return "\<ESC>".cmd."=ko"
     endif
